@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
-import { Error as MongooseError, isValidObjectId } from "mongoose";
+import { isValidObjectId } from "mongoose";
 import * as claseService from "./clase.service";
+import { handleError } from "../../utils/handleError";
 
 // Controlador: recibe la request HTTP, llama al servicio y arma la respuesta
 // con el código de estado correcto. No sabe nada de la base de datos.
@@ -9,17 +10,7 @@ type IdParams = { id: string };
 
 // Si Mongoose rechazó los datos (campo faltante, cupo < 1, etc.) es culpa del
 // cliente → 400. Cualquier otro error es del servidor → 500.
-const handleError = (res: Response, error: unknown) => {
-  if (error instanceof MongooseError.ValidationError) {
-    const errores = Object.values(error.errors).map((e) => e.message);
-    return res.status(400).json({ message: "Datos inválidos", errores });
-  }
-  if (error instanceof MongooseError.CastError) {
-    return res.status(400).json({ message: `Valor inválido para ${error.path}` });
-  }
-  console.error(error);
-  return res.status(500).json({ message: "Error interno del servidor" });
-};
+
 
 const isEmptyBody = (body: unknown) =>
   !body || typeof body !== "object" || Object.keys(body).length === 0;
