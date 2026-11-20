@@ -1,5 +1,6 @@
 import express, { type NextFunction, type Request, type Response } from "express";
 import claseRoutes from "./components/clase/clase.routes";
+import userRoutes from "./components/user/user.routes";
 
 // app.ts arma la aplicación Express (middlewares y rutas), pero NO la levanta.
 const app = express();
@@ -12,6 +13,7 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api/clases", claseRoutes);
+app.use("/api/auth", userRoutes);
 
 // Cualquier ruta que no exista → 404
 app.use((_req, res) => {
