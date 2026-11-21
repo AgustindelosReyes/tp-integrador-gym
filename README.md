@@ -121,6 +121,10 @@ En cualquier endpoint, un error inesperado del servidor devuelve **500**.
 - **Email:** debe tener un formato válido y no puede estar repetido (409).
 - **Contraseña:** mínimo 6 caracteres.
 
+## Extras implementados
+
+- **Middleware de logging:** muestra en la consola el método y la URL de cada petición.
+
 ## Pruebas
 
 Las pruebas manuales se hicieron con Thunder Client. La colección exportada está en `thunder-tests/thunder-collection_Gym_API.json` (para usarla: Thunder Client → Collections → Import).

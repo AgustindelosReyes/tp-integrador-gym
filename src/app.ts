@@ -1,9 +1,12 @@
 import express, { type NextFunction, type Request, type Response } from "express";
 import claseRoutes from "./components/clase/clase.routes";
 import userRoutes from "./components/user/user.routes";
+import { logger } from "./middlewares/logger.middleware";
 
 // app.ts arma la aplicación Express (middlewares y rutas), pero NO la levanta.
 const app = express();
+
+app.use(logger);
 
 // Permite leer JSON en req.body
 app.use(express.json());
