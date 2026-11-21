@@ -32,3 +32,12 @@ export const verificarToken = (req: Request, res: Response, next: NextFunction) 
     return res.status(401).json({ message: "Token inválido o expirado" });
   }
 };
+
+// Middleware: solo deja pasar a usuarios con rol "admin".
+// Tiene que ir DESPUÉS de verificarToken, que es quien carga res.locals.user.
+export const soloAdmin = (_req: Request, res: Response, next: NextFunction) => {
+  if (res.locals.user?.role !== "admin") {
+    return res.status(403).json({ message: "Acceso denegado: se requiere rol admin" });
+  }
+  return next();
+};

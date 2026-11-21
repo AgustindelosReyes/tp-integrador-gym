@@ -99,7 +99,7 @@ Body de registro y login:
 | GET | `/api/clases/:id` | Obtener una clase por id | No | 200, 400, 404 |
 | POST | `/api/clases` | Crear una clase | Sí | 201, 400, 401 |
 | PUT | `/api/clases/:id` | Actualizar una clase | Sí | 200, 400, 401, 404 |
-| DELETE | `/api/clases/:id` | Eliminar una clase | Sí | 200, 400, 401, 404 |
+| DELETE | `/api/clases/:id` | Eliminar una clase | Sí (solo admin) | 200, 400, 401, 403, 404 |
 
 Body para crear una clase:
 
@@ -125,6 +125,15 @@ En cualquier endpoint, un error inesperado del servidor devuelve **500**.
 
 - **Middleware de logging:** muestra en la consola el método y la URL de cada petición.
 - **Filtros con `req.query`:** `GET /api/clases?instructor=Laura&nombre=spinning` filtra por instructor y/o nombre (sin distinguir mayúsculas y con coincidencia parcial).
+- **Roles:** solo un usuario con rol `admin` puede eliminar clases. Los demás reciben 403.
+
+## Usuario administrador
+
+Al registrarse, todos los usuarios tienen el rol `user`. Para probar el DELETE hace falta un admin:
+
+1. Registrar un usuario con `POST /api/auth/register`.
+2. En MongoDB Atlas, abrir la colección `users` y cambiar el campo `role` de ese usuario a `"admin"`.
+3. Iniciar sesión de nuevo con `POST /api/auth/login`: el token nuevo ya incluye el rol admin.
 
 ## Pruebas
 
