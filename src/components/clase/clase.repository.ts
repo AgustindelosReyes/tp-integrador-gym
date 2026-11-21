@@ -1,10 +1,19 @@
 import { Clase, type IClase } from "./clase.model";
 
-// Repositorio: la ÚNICA capa que habla con la base de datos.
-// Si mañana cambiás Mongo por otra cosa, solo se toca este archivo.
+export type FiltrosClase = { instructor?: string; nombre?: string };
 
-export const findAll = () => {
-  return Clase.find();
+// Escapa los caracteres especiales para que el texto se busque tal cual
+// (así nadie puede colar una expresión regular maliciosa en la búsqueda).
+const escapar = (texto: string) => texto.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+export const findAll = (filtros: FiltrosClase = {}) => {
+  const filtro: { instructor?: RegExp; nombre?: RegExp } = {};
+
+  // "i" = sin distinguir mayúsculas; busca coincidencia parcial
+  if (filtros.instructor) filtro.instructor = new RegExp(escapar(filtros.instructor), "i");
+  if (filtros.nombre) filtro.nombre = new RegExp(escapar(filtros.nombre), "i");
+
+  return Clase.find(filtro);
 };
 
 export const findById = (id: string) => {
@@ -17,8 +26,8 @@ export const create = (data: IClase) => {
 
 export const update = (id: string, data: Partial<IClase>) => {
   return Clase.findByIdAndUpdate(id, data, {
-    returnDocument: "after", // devuelve el documento ya actualizado
-    runValidators: true, // aplica las reglas del schema también al actualizar
+    returnDocument: "after", 
+    runValidators: true, 
   });
 };
 

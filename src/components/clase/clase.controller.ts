@@ -15,10 +15,17 @@ type IdParams = { id: string };
 const isEmptyBody = (body: unknown) =>
   !body || typeof body !== "object" || Object.keys(body).length === 0;
 
-// GET /api/clases
-export const getAll = async (_req: Request, res: Response) => {
+// GET /api/clases  (filtros opcionales: ?instructor=...&nombre=...)
+export const getAll = async (req: Request, res: Response) => {
   try {
-    const clases = await claseService.getAllClases();
+    const { instructor, nombre } = req.query;
+
+    // Solo aceptamos texto simple; cualquier otra cosa se ignora
+    const filtros: { instructor?: string; nombre?: string } = {};
+    if (typeof instructor === "string") filtros.instructor = instructor;
+    if (typeof nombre === "string") filtros.nombre = nombre;
+
+    const clases = await claseService.getAllClases(filtros);
     return res.status(200).json(clases);
   } catch (error) {
     return handleError(res, error);

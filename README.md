@@ -95,7 +95,7 @@ Body de registro y login:
 
 | Método | Ruta | Descripción | Protegida | Códigos |
 |---|---|---|---|---|
-| GET | `/api/clases` | Listar todas las clases | No | 200 |
+| GET | `/api/clases` | Listar todas las clases (acepta ?instructor= y ?nombre=) | No | 200 |
 | GET | `/api/clases/:id` | Obtener una clase por id | No | 200, 400, 404 |
 | POST | `/api/clases` | Crear una clase | Sí | 201, 400, 401 |
 | PUT | `/api/clases/:id` | Actualizar una clase | Sí | 200, 400, 401, 404 |
@@ -124,6 +124,7 @@ En cualquier endpoint, un error inesperado del servidor devuelve **500**.
 ## Extras implementados
 
 - **Middleware de logging:** muestra en la consola el método y la URL de cada petición.
+- **Filtros con `req.query`:** `GET /api/clases?instructor=Laura&nombre=spinning` filtra por instructor y/o nombre (sin distinguir mayúsculas y con coincidencia parcial).
 
 ## Pruebas
 

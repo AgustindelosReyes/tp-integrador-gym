@@ -1,9 +1,9 @@
 import type { IClase } from "./clase.model";
 import * as claseRepository from "./clase.repository";
 import { AppError } from "../../utils/AppError";
+import type { FiltrosClase } from "./clase.repository";
 
 // Validaciones de negocio: se ejecutan antes de tocar la base de datos.
-// Usamos Partial<IClase> porque en un PUT puede venir solo una parte de los campos.
 const validarClase = (data: Partial<IClase>) => {
   // Regla 1: el horario tiene formato HH:MM (por ejemplo 18:30)
   if (data.horario !== undefined && !/^([01]\d|2[0-3]):[0-5]\d$/.test(data.horario)) {
@@ -18,8 +18,8 @@ const validarClase = (data: Partial<IClase>) => {
 
 // Servicio: lógica de negocio. Usa el repositorio para leer/escribir datos.
 
-export const getAllClases = async () => {
-  return await claseRepository.findAll();
+export const getAllClases = async (filtros: FiltrosClase = {}) => {
+  return await claseRepository.findAll(filtros);
 };
 
 export const getClaseById = async (id: string) => {
