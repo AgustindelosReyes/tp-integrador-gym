@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "Gym API",
     "collectionId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
-    "dateExported": "2026-11-21T00:37:59.852Z",
+    "dateExported": "2026-11-21T01:35:11.320Z",
     "version": "1.4",
     "folders": [
         {
@@ -53,6 +53,13 @@
             "containerId": "09858644-533a-49de-9e29-160cf32dbad1",
             "created": "2026-11-20T23:59:06.579Z",
             "sortNum": 70000
+        },
+        {
+            "_id": "0157c5d8-32ce-4c69-9f7c-2fed910f7828",
+            "name": "listar clases",
+            "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "created": "2026-11-21T01:13:07.202Z",
+            "sortNum": 80000
         }
     ],
     "requests": [
@@ -86,7 +93,7 @@
             "body": {
                 "type": "json",
                 "raw": [
-                    "{ \"email\": \"agustin@test.com\", \"password\": \"123456\" }"
+                    "{ \"email\": \"ashe@test.com\", \"password\": \"flechadefrelyoi\" }"
                 ],
                 "form": []
             }
@@ -211,6 +218,18 @@
             "headers": []
         },
         {
+            "_id": "a8ed0b69-74ec-4eb1-879a-4321715ad7be",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "eliminar sin ser admin (403)",
+            "url": "http://localhost:3000/api/clases/6aef97a370e44dc1d03fe4ae",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2026-11-21T01:31:14.263Z",
+            "modified": "2026-11-21T01:31:14.263Z",
+            "headers": []
+        },
+        {
             "_id": "0eacf538-262a-4c9a-8942-1c66ee3e7c8d",
             "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
             "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
@@ -235,7 +254,7 @@
             },
             "auth": {
                 "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjIyOTU5LCJleHAiOjE3OTUyMjY1NTl9.mSyNU_2JGxwe74Nlt1NYQTLd-VbcU5m93Ts3jRI8EU8"
             }
         },
         {
@@ -506,7 +525,69 @@
                 "type": "bearer",
                 "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
             }
+        },
+        {
+            "_id": "fd5ea7ce-56c2-4baf-802c-c98aeaeab693",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "0157c5d8-32ce-4c69-9f7c-2fed910f7828",
+            "name": "filtro por instructor",
+            "url": "http://localhost:3000/api/clases?instructor=laura",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2026-11-21T01:13:42.874Z",
+            "modified": "2026-11-21T01:13:42.874Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "instructor",
+                    "value": "laura",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "e3898ae7-fdbf-4c65-bd1c-41ad841f360c",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "0157c5d8-32ce-4c69-9f7c-2fed910f7828",
+            "name": "filtro por clase",
+            "url": "http://localhost:3000/api/clases?nombre=CrossFit",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2026-11-21T01:14:51.193Z",
+            "modified": "2026-11-21T01:14:51.193Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "nombre",
+                    "value": "CrossFit",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2f7ae53f-9733-49b7-ae1c-348a16dd6a05",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "0157c5d8-32ce-4c69-9f7c-2fed910f7828",
+            "name": "filtro por instructor y clase",
+            "url": "http://localhost:3000/api/clases?instructor=raul&nombre=CrossFit",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2026-11-21T01:15:55.378Z",
+            "modified": "2026-11-21T01:15:55.378Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "instructor",
+                    "value": "raul",
+                    "isPath": false
+                },
+                {
+                    "name": "nombre",
+                    "value": "CrossFit",
+                    "isPath": false
+                }
+            ]
         }
     ],
-    "ref": "eZFyz69_MSqvGxCq-rkwMoXrtSYZt_hGX-UPRJlfhCdsvN0SCXzz0e9MD6Yx1OrqV9mcYDLtlq6r9VvPRx8lxQ"
+    "ref": "eZFyz69_MSqvGxCq-rkwMpoyXIW12clLUfMUtAuuPSYHmjV0Ckze-jRBGv6RP_SxfgrUStxRz74xI2lfoqs5dA"
 }
