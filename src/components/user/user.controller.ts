@@ -11,3 +11,13 @@ export const register = async (req: Request, res: Response) => {
     return handleError(res, error);
   }
 };
+
+// POST /api/auth/login
+export const login = async (req: Request, res: Response) => {
+  try {
+    const resultado = await userService.login(req.body ?? {});
+    return res.status(200).json(resultado);
+  } catch (error) {
+    return handleError(res, error);
+  }
+};

@@ -1,6 +1,7 @@
 import * as bcrypt from "bcrypt";
 import { AppError } from "../../utils/AppError";
 import * as userRepository from "./user.repository";
+import * as jwt from "jsonwebtoken";
 
 const SALT_ROUNDS = 10;
 
@@ -35,4 +36,33 @@ export const register = async ({ email, password }: Credenciales) => {
 
   // Devolvemos solo datos seguros: JAMÁS el hash ni la contraseña
   return { id: user._id, email: user.email, role: user.role };
+};
+
+export const login = async ({ email, password }: Credenciales) => {
+  if (typeof email !== "string" || typeof password !== "string" || !email || !password) {
+    throw new AppError("Email y contraseña son obligatorios", 400);
+  }
+
+  const user = await userRepository.findByEmail(email.trim().toLowerCase());
+
+  // bcrypt.compare verifica la contraseña contra el hash, sin descifrarlo
+  const passwordOk = user ? await bcrypt.compare(password, user.password) : false;
+
+  // Mismo mensaje si el email no existe o la contraseña es incorrecta,
+  // así no le damos pistas a quien intente adivinar cuentas.
+  if (!user || !passwordOk) {
+    throw new AppError("Credenciales inválidas", 401);
+  }
+
+  const secret = process.env.JWT_SECRET;
+  if (!secret) {
+    throw new Error("Falta JWT_SECRET en el archivo .env");
+  }
+
+  // El token lleva solo id y rol. Dura 1 hora.
+  const token = jwt.sign({ id: user._id.toString(), role: user.role }, secret, {
+    expiresIn: "1h",
+  });
+
+  return { token };
 };
