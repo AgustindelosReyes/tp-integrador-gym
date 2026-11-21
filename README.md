@@ -39,7 +39,7 @@ npm run build   # compila a /dist
 npm start       # ejecuta la versión compilada
 ```
 
-El servidor queda disponible en `http://localhost:3000`.
+El servidor queda disponible en http://localhost:3000 (o el puerto definido en PORT).
 
 ## Estructura del proyecto
 
@@ -51,7 +51,8 @@ src/
 │   ├── clase/                 # modelo, repositorio, servicio, controlador y rutas
 │   └── user/                  # modelo, repositorio, servicio, controlador y rutas
 ├── middlewares/
-│   └── auth.middleware.ts     # verificación del JWT
+│   ├── auth.middleware.ts     # verificación del JWT y del rol admin
+│   └── logger.middleware.ts   # logging de peticiones
 ├── utils/
 │   ├── AppError.ts            # error de negocio con código HTTP
 │   └── handleError.ts         # traduce errores a respuestas HTTP
