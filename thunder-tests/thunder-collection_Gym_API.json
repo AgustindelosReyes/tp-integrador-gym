@@ -1,0 +1,512 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Gym API",
+    "collectionId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+    "dateExported": "2026-11-21T00:37:59.852Z",
+    "version": "1.4",
+    "folders": [
+        {
+            "_id": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "name": "CRUD clases",
+            "containerId": "",
+            "created": "2026-11-07T21:19:40.915Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "9b694707-90fd-438e-b283-b3fef831f741",
+            "name": "Errores",
+            "containerId": "",
+            "created": "2026-11-07T21:19:49.771Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "6a5472ad-1a17-41b4-abf2-0f3d5e67329f",
+            "name": "Auth",
+            "containerId": "",
+            "created": "2026-11-20T23:26:14.531Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "CRUD error clases",
+            "containerId": "9b694707-90fd-438e-b283-b3fef831f741",
+            "created": "2026-11-20T23:48:17.036Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "09858644-533a-49de-9e29-160cf32dbad1",
+            "name": "Auth errors",
+            "containerId": "9b694707-90fd-438e-b283-b3fef831f741",
+            "created": "2026-11-20T23:49:19.688Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "92436e68-4580-45ea-b49e-9e9b8667d768",
+            "name": "Registro",
+            "containerId": "09858644-533a-49de-9e29-160cf32dbad1",
+            "created": "2026-11-20T23:56:20.372Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "12ca335c-98ce-422b-9b86-22e193b000ff",
+            "name": "Login",
+            "containerId": "09858644-533a-49de-9e29-160cf32dbad1",
+            "created": "2026-11-20T23:59:06.579Z",
+            "sortNum": 70000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "d3acc5e2-bee0-45ae-9ebc-69dd3de37545",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "clase borrada (404)",
+            "url": "http://localhost:3000/api/clases/6aef97a370e44dc1d03fe4ae",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2026-11-07T21:28:33.920Z",
+            "modified": "2026-11-07T21:28:33.920Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        },
+        {
+            "_id": "d70ce000-e841-4916-b09c-8b1ae0cc9d90",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "6a5472ad-1a17-41b4-abf2-0f3d5e67329f",
+            "name": "Registro",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2026-11-20T23:25:18.463Z",
+            "modified": "2026-11-20T23:25:18.463Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"agustin@test.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "a2a43c54-2217-4e7b-a64f-93c359c97063",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "92436e68-4580-45ea-b49e-9e9b8667d768",
+            "name": "Registra mismo User (409)",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2026-11-20T23:48:53.812Z",
+            "modified": "2026-11-20T23:48:53.812Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"agustin@test.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "23c7101f-8b60-4f5c-93d0-0c2e6aaad0ba",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "12ca335c-98ce-422b-9b86-22e193b000ff",
+            "name": "Contraseña inválida (401)",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2026-11-20T23:54:55.531Z",
+            "modified": "2026-11-20T23:54:55.531Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"agustin@test.com\", \"password\": \"123\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "1fc554d6-06ec-42da-9b26-e68d16a90428",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "id inválido (400)",
+            "url": "http://localhost:3000/api/clases/123",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2026-11-07T21:29:02.280Z",
+            "modified": "2026-11-07T21:29:02.280Z",
+            "headers": []
+        },
+        {
+            "_id": "ed3b3879-aec8-44e8-8485-e8b6c9ac4ae6",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "92436e68-4580-45ea-b49e-9e9b8667d768",
+            "name": "Email inválido (400)",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2026-11-20T23:50:41.357Z",
+            "modified": "2026-11-20T23:50:41.357Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"kantobestregion\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "2edb0f06-06c2-4580-a4d0-cb10ec4d52ec",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "12ca335c-98ce-422b-9b86-22e193b000ff",
+            "name": "Body vacío (400)",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2026-11-20T23:55:50.729Z",
+            "modified": "2026-11-20T23:55:50.729Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "97643810-dc84-4524-898e-2b4cc8dd0d4a",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "12ca335c-98ce-422b-9b86-22e193b000ff",
+            "name": "email inexistente (401)",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2026-11-20T23:59:52.204Z",
+            "modified": "2026-11-20T23:59:52.204Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"warcraft4@test.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "b89ecd96-9c68-4f4c-91b8-70cd85cee2a4",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "sin token (401)",
+            "url": "http://localhost:3000/api/clases/6aef97a370e44dc1d03fe4ae",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2026-11-21T00:36:25.947Z",
+            "modified": "2026-11-21T00:36:25.947Z",
+            "headers": []
+        },
+        {
+            "_id": "0eacf538-262a-4c9a-8942-1c66ee3e7c8d",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "name": "crear clase",
+            "url": "http://localhost:3000/api/clases",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2026-11-07T21:21:32.066Z",
+            "modified": "2026-11-07T21:21:32.067Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"nombre\": \"CrossFit\",",
+                    "  \"instructor\": \"Ezquivel Alfonso\",",
+                    "  \"horario\": \"18:30\",",
+                    "  \"cupo\": 20",
+                    "}"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        },
+        {
+            "_id": "e22f42d1-e9b9-4b93-9a8a-af26b96fbaaf",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "id inexistente (404)",
+            "url": "http://localhost:3000/api/clases/000000000000000000000000",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2026-11-07T21:29:28.704Z",
+            "modified": "2026-11-07T21:29:28.704Z",
+            "headers": []
+        },
+        {
+            "_id": "5de0082a-da88-4c0b-960b-83360329d091",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "92436e68-4580-45ea-b49e-9e9b8667d768",
+            "name": "Contraseña inválida (400)",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2026-11-20T23:52:26.299Z",
+            "modified": "2026-11-20T23:52:26.299Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"agustin@test.com\", \"password\": \"123\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "5d761b4b-22e4-4bf6-811c-59e5f5f4a2af",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "name": "listar clases",
+            "url": "http://localhost:3000/api/clases",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2026-11-07T21:24:35.878Z",
+            "modified": "2026-11-07T21:24:35.879Z",
+            "headers": []
+        },
+        {
+            "_id": "d588490f-9302-4785-8b4b-cec769583924",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "falta el nombre (400)",
+            "url": "http://localhost:3000/api/clases",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2026-11-07T21:29:59.752Z",
+            "modified": "2026-11-07T21:29:59.752Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"instructor\": \"Tomas Hernandez\",",
+                    "  \"horario\": \"18:30\",",
+                    "  \"cupo\": 20",
+                    "}"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        },
+        {
+            "_id": "d1171608-d158-4df9-a260-90573abacbc0",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "92436e68-4580-45ea-b49e-9e9b8667d768",
+            "name": "Sin email ni contraseña(400)",
+            "url": "http://localhost:3000/api/auth/register",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2026-11-20T23:53:53.555Z",
+            "modified": "2026-11-20T23:53:53.555Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "00309d8b-5465-40f3-bc2e-85ee723e5b57",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "name": "clase por id",
+            "url": "http://localhost:3000/api/clases/6aef96a770e44dc1d03fe4ac",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2026-11-07T21:25:06.303Z",
+            "modified": "2026-11-07T21:25:06.303Z",
+            "headers": []
+        },
+        {
+            "_id": "f3518c5a-b617-47c3-b9b7-edae063abed1",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "sin token (401)",
+            "url": "http://localhost:3000/api/clases",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2026-11-21T00:19:24.280Z",
+            "modified": "2026-11-21T00:19:24.280Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"nombre\": \"CrossFit\",",
+                    "  \"instructor\": \"Ezquivel Alfonso\",",
+                    "  \"horario\": \"18:30\",",
+                    "  \"cupo\": 20",
+                    "}"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "6166f0ed-c962-469b-ab43-7a414b762cbc",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "name": "actualizar clase",
+            "url": "http://localhost:3000/api/clases/6aef970570e44dc1d03fe4ad",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2026-11-07T21:25:58.960Z",
+            "modified": "2026-11-07T21:25:58.960Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"cupo\": 25",
+                    "}"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        },
+        {
+            "_id": "0a7d4e90-a430-4a80-a07f-07605baf250e",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "Token inválido (401)",
+            "url": "http://localhost:3000/api/clases",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2026-11-21T00:22:23.629Z",
+            "modified": "2026-11-21T00:22:23.629Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{",
+                    "  \"nombre\": \"CrossFit\",",
+                    "  \"instructor\": \"Ezquivel Alfonso\",",
+                    "  \"horario\": \"18:30\",",
+                    "  \"cupo\": 20",
+                    "}"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "Pokemon verde hoja"
+            }
+        },
+        {
+            "_id": "4e672c6c-1a62-4edd-a6d0-1551a7a568d3",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "105d3468-6bda-4b27-a9c4-92587212bef8",
+            "name": "eliminar clase",
+            "url": "http://localhost:3000/api/clases/6aef97a370e44dc1d03fe4ae",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2026-11-07T21:27:10.657Z",
+            "modified": "2026-11-07T21:27:10.657Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        },
+        {
+            "_id": "88c6ed68-3c11-47d4-9f8e-1e08003f9ec6",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "6a5472ad-1a17-41b4-abf2-0f3d5e67329f",
+            "name": "Login",
+            "url": "http://localhost:3000/api/auth/login",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2026-11-20T23:39:39.368Z",
+            "modified": "2026-11-20T23:39:39.368Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ \"email\": \"agustin@test.com\", \"password\": \"123456\" }"
+                ],
+                "form": []
+            }
+        },
+        {
+            "_id": "fbf3373c-2886-4aea-b5dc-f6039da6a02c",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "horario inválido (400)",
+            "url": "http://localhost:3000/api/clases",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2026-11-21T00:34:05.552Z",
+            "modified": "2026-11-21T00:34:05.552Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ ",
+                    "  \"nombre\": \"Yoga\", ",
+                    "  \"instructor\": \"Ana Pérez\",",
+                    "  \"horario\": \"25:99\", ",
+                    "  \"cupo\": 20 ",
+                    "}"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        },
+        {
+            "_id": "43bd7c6d-e633-49b9-b23d-e041d9138e32",
+            "colId": "5187dae5-d45a-4974-a157-a70c21e5cc09",
+            "containerId": "02616221-19b5-42d4-96f3-61b2510ab352",
+            "name": "cupo fuera de rango (400)",
+            "url": "http://localhost:3000/api/clases",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2026-11-21T00:35:37.070Z",
+            "modified": "2026-11-21T00:35:37.070Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": [
+                    "{ ",
+                    "  \"nombre\": \"Yoga\", ",
+                    "  \"instructor\": \"Ana Pérez\",",
+                    "  \"horario\": \"18:30\", ",
+                    "  \"cupo\": 400 ",
+                    "}"
+                ],
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZiMDBkNjFlOWMzNDFiZGNhOGViYWQ3NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzk1MjE4OTQ2LCJleHAiOjE3OTUyMjI1NDZ9.JsqglQ3tMjnPe7IjvLiFs4bA5b-bYdsMtZ7nLCAGL-c"
+            }
+        }
+    ],
+    "ref": "eZFyz69_MSqvGxCq-rkwMoXrtSYZt_hGX-UPRJlfhCdsvN0SCXzz0e9MD6Yx1OrqV9mcYDLtlq6r9VvPRx8lxQ"
+}
